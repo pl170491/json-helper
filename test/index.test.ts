@@ -1,5 +1,20 @@
-import { sum } from '../src/index';
+import jsonHelper from '../src/index';
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+test("['hello'] of { hello: 'there' } should be ['there']", () => {
+  expect(jsonHelper({ hello: 'there' }, ['hello'])).toEqual(['there']);
+});
+
+test('nested class', () => {
+  expect(
+    jsonHelper({ hello: { there: 'Obi-Wan Kenobi' } }, ['hello', 'there']),
+  ).toEqual(['Obi-Wan Kenobi']);
+});
+
+test('top level array', () => {
+  expect(
+    jsonHelper(
+      { hello: [{ there: 'Obi-Wan Kenobi' }, { there: 'General Grievous' }] },
+      ['hello', 'there'],
+    ),
+  ).toEqual(['Obi-Wan Kenobi', 'General Grievous']);
 });
