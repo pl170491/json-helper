@@ -1,7 +1,7 @@
 {
   "name": "@pl170491/json-helper",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "./lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,7 +9,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --verbose",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\""
   },

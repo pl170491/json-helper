@@ -1,4 +1,4 @@
-import { jsonHelper } from "../src/index";
+import { jsonHelper } from "../lib/index";
 
 test("['hello'] of { hello: 'there' } should be ['there']", () => {
   expect(jsonHelper({ hello: "there" }, ["hello"])).toEqual(["there"]);

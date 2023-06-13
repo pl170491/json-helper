@@ -1,5 +1,3 @@
-// Gotta learn more about types for this
-
 type objectArrayType = (Record<string, unknown> | string | number)[];
 export function jsonHelper(object: Record<string, unknown>, target: string[]) {
   let objectArray: objectArrayType = [object];
